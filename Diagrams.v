@@ -152,7 +152,7 @@ Section PlusWf.
     intros x x'; cgen x.
     induction x' as [x' IH ] using (well_founded_ind Hpwf).
     intros x y xTx'; cgen y.
-    (* induction verticale sur la dérivation de xT*x' *)
+    (* induction verticale sur la dÃ©rivation de xT*x' *)
     induction xTx' as [ x | x1 x x' xTx1 x1Ts' IHv ]; intros y xSy.
     exists y; auto.
     destruct xSy as [ w xSw wSy ].
@@ -263,7 +263,7 @@ Section StarWf.
       intro x; induction x as [ x IH ] using (well_founded_ind Hwf).
       intros x' y xTx' xSRy; cgen xTx'; cgen x'.
       destruct xSRy as [ z xSz zRy ].
-      (* induction sur la dérivation xS*z *)
+      (* induction sur la dÃ©rivation xS*z *)
       induction xSz as [ x | w x z xSw wSz IHh ]; intros x' xTx'.
       destruct (HR xTx' zRy) as [ y' yTy' x'SRy' ]; exists y'; auto. 
       destruct (HS xTx' xSw) as [ w' wTw' x'Sw' ].
@@ -276,7 +276,7 @@ Section StarWf.
         forall w3 y2,
   	TX w2 w3 -> SR w2 y2 -> exists2 y3, star TY y2 y3 & SR w3 y3).
       clear IH IHh xTx' xSw x wSz wTw1 w; intro IH; cgen w1Sz1; cgen zTz1; cgen z1.
-      (* induction sur la dérivation w1T*w' *)
+      (* induction sur la dÃ©rivation w1T*w' *)
       induction w1Tw' as [ w1 | w2 w1 w' w1Tw2 w2Tw' IHv ]; intros y1 yTy1 w1SRy1.
       destruct w1SRy1 as [ z1 w1Sz1 z1Ry1 ].
       exists y1; auto; exists z1; auto; apply star_trans with w1; auto.
@@ -338,7 +338,7 @@ Section StarWf.
       intro x; induction x as [ x IH ] using (well_founded_ind Hwf).
       intros x' y xTx' xSRy; cgen xTx'; cgen x'.
       destruct xSRy as [ z xSz zRy ].
-      (* induction sur la dérivation xS*z *)
+      (* induction sur la dÃ©rivation xS*z *)
       induction xSz as [ x | w x z xSw wSz IHh ]; intros x' xTx'.
       destruct (HRT xTx' zRy) as [ y' yTy' x'SRy' ]; exists y'; auto. 
       destruct (HT xTx' xSw) as [ w' wTw' x'Sw' ].
