@@ -160,7 +160,7 @@ Section Global.
       exists w'; auto.
     Qed.
 
-    (* on doit faire le lemme suivant directement, pour pouvoir utiliser des transitions différentes *)
+    (* on doit faire le lemme suivant directement, pour pouvoir utiliser des transitions diffÃ©rentes *)
     Variable L: relation Y.
     Hypothesis HL: simulation TY TY L.
     
